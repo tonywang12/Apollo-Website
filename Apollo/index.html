@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="styles.css" rel="stylesheet" />
+<title>Home</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#content').hide();
+    $('#explore').hide();
+
+$('video#home-vid').on('timeupdate', function(){
+    var vid = document.getElementById("home-sound");
+    var ct = parseInt($(this).get(0).currentTime);
+        if(ct == 0){
+            vid.volume = 0.3;
+            vid.play();       
+        }
+        if(ct == 1){
+            $('#content').fadeIn(4000); 
+            vid.volume = 0.3;
+            vid.play();          
+        }
+        if(ct == 6){
+            $('#explore').fadeIn(2000);        
+        }
+    })
+});
+</script>
+</head>
+
+<body>
+    <audio id="home-sound" loop src="countdown.mp3">
+        <p>If you are reading this, it is because your browser does not support the audio element.</p>
+    </audio>
+
+    <video autoplay muted loop id="home-vid">
+        <source src="homeVideo.mp4" type="video/mp4">
+    </video>
+
+    <section id="content">
+        <h1>The <br>
+         <span id ="apollo">Apollo 11</span> <br>
+         Mission</h1>
+    </section>
+
+    <div id="explore">
+        <h2><a id="homelink" href="page1.html">Explore the journey</a></h2>
+    </div>
+    
+    
+    
+
+</body>
+
+</html>

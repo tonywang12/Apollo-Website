@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="styles.css" rel="stylesheet" />
+<title>Major Project</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('div#info').hide();
+    $('div.sidebar').hide();
+    $('div#info').fadeIn(3000); 
+    $('div.sidebar').fadeIn(5000); 
+
+    
+    // chapter 1 hover
+    $("#chapter1").mouseover(function () {
+        $('#chapter1').text("The race begins");
+    });
+    $('#chapter1').mouseleave(function(){
+    	$('#chapter1').text("Chapter 1");
+  	});
+    // chapter 2 hover
+    $("#chapter2").mouseover(function () {
+        $('#chapter2').text("The crew");
+    });
+    $('#chapter2').mouseleave(function(){
+    	$('#chapter2').text("Chapter 2");
+  	});
+    // chapter 3 hover
+      $("#chapter3").mouseover(function () {
+        $('#chapter3').text("lift off");
+    });
+    $('#chapter3').mouseleave(function(){
+    	$('#chapter3').text("Chapter 3");
+  	});
+    // chapter 4 hover
+    $("#chapter4").mouseover(function () {
+        $('#chapter4').text("landing");
+    });
+    $('#chapter4').mouseleave(function(){
+    	$('#chapter4').text("Chapter 4");
+  	});
+    // chapter 5 hover
+    $("#chapter5").mouseover(function () {
+        $('#chapter5').text("The race begins");
+    });
+    $('#chapter5').mouseleave(function(){
+    	$('#chapter5').text("Chapter 5");
+  	});
+   //name
+    $("#creator").mouseover(function () {
+        $('#creator').text("De Hang Tony Wang");
+    });
+    $('#creator').mouseleave(function(){
+    	$('#creator').text("Created by");
+  	});
+
+
+
+	$('figure').mouseleave(function(){
+    	$(this).find('figcaption').stop().slideUp(500);
+		
+  	});
+
+	  
+  	$('figure').mouseover(function(){
+    	$(this).find('figcaption').stop().slideDown(500);
+		
+  	});
+
+$('div a').hover(function(event){
+      event.preventDefault();
+      var target = $( $(this).attr('href') ).position().top
+      $('html,body').stop().animate({
+        scrollTop: target
+      },{
+        duration: 1000
+    })
+  })
+
+  $('#lift-off').hide();
+
+  $('audio#countdown').on('timeupdate', function(){
+    var aud = document.getElementById("countdown");
+    var ct = parseInt($(this).get(0).currentTime);
+        if(ct == 34){
+          $('#lift-off').fadeIn(3000);          
+        }
+    })
+});
+</script>
+</head>
+
+<body id="pg1">
+    <div class="sidebar">
+        <a id="chapter1" href="#ch1">chapter 1</a>
+        <a id="chapter2" href="#ch2">chapter 2</a>
+        <a id="chapter3" href="#ch3">chapter 3</a>
+        <a id="chapter4" href="#ch4">chapter 4</a>
+        <a id="creator">Created by</a>
+      </div>
+
+
+    <div id="info">
+
+    <figure class="imgHolder" id="page1-top">
+        <img src="page1-img.jpg" alt="Man on Moon" />
+    </figure>
+    
+    <h1 class= "title" id= "ch1">The race begins - chapter 1</h1>
+
+    <div class = "text">
+    <p>With no one ever reaching onto space yet, the desire for the competition between the Soviet Union and the United States reached another form of tension, who would take foot onto the moon first. Both sides developed spacecrafts in experimenting the idea of controlling and surviving the exit of the Earth’s orbit. </p>
+    <p>On November 3, 1957, the Soviet launched ‘Sputnik 2’ the second spacecraft to ever leave the earth’s atmosphere. The gap was nearing closer and closer with the United States responding with the establishment of NASA(National Aeronautics and Space Act) in 1958 by President Dwight D. Eisenhower. Once again, the Soviet responded by taking the first orbital flight occupied by Soviet cosmonaut Yuri Gagarin, April 12, 1961. On May 25, 1961, the U.S president at the time - John F. Kennedy, set the national goal of achieving the moon landing with this decade.</p>
+    <p>Thus, initialising the start of the Apollo 11 mission for this national goal to become true.  </p>
+ 
+
+    <figure class="s-imgHolder" id="page1-nasa">
+        <img src="nasa.jpeg" alt="Nasa" />
+        <figcaption>Dr. T. Keith Glennan, head of NASA with President Dwight Eisenhower, April 1, 1960</figcaption>
+    </figure>
+
+  
+    <h1 class= "title" id= "ch2">The Crew - chapter 2</h1>
+
+
+   
+      <p>In January 1969, the crew for the Apollo 11 mission was named with the crew consisting of three astronauts, Neil Armstrong, Edwin “Buzz” Aldrin and Michael Collins. </p>
+    
+      <h3>Neil Armstrong</h2>
+        <figure class="crew-imgHolder" id="neil-armstrong">
+          <img src="Neil-Armstrong-American.jpg" alt="Neil" />
+          <figcaption>Neil Armstrong in April 1969(NASA)</figcaption>
+      </figure>
+      <p>Born on August 5, 1030, in Ohio, Neil Armstrong was a child with the hobby of constructing model planes as a boy. Neil Armstrong’s love for aircrafts was reinforced with him obtaining his pilot license at 16 before his driver’s license. Armstrong began studying aeronautical engineering at Purdue University on a U.S Navy scholarship in 1947. During 25 June 1950 to 27 July 1954, Neil Armstrong fought in the Korean War as a U.S pilot, fling though 78 combat missions within the war. He left the U.S service in 1952 and joined NASA (National Aeronautics and Space Administration) a few years later. At NASA, Neil Armstrong was a test pilot for spacecrafts and even almost died on his first test flight in 1988 after a near-disaster occurred on the exit of Earth’s orbit. </p>
+      
+      <h3>Buzz Aldrin</h3>
+      <figure class="crew-imgHolder" id="Buzz">
+        <img src="Buzz-Aldrin.jpg" alt="Buzz" />
+        <figcaption>Buzz Aldrin in April 1969(NASA)</figcaption>
+    </figure>
+      <p>Buzz Aldrin, originally named Edwin Eugene Aldrin, Jr., was born on January 20, 1930, in New Jersey. Buzz Aldrin attended Montclair High School, graduating a year earlier and attended the US Military Academy at West Point. It was here were he learnt mechanical engineering. Like Neil Armstrong, Buzz Aldrin also fought in the Korean War, joining the Air Force where he piloted for 66 combat missions during the war. After the war, he achieved his Doctorate of Science in Astronautics at the Massachusetts Institute of Technology, even writing and publishing his own thesis on Manned Orbital Rendezvous. He was selected in 1963 by NASA (National Aeronautics and Space Administration) to be apart of the third group of astronauts along with Neil Armstrong. He was famously known for pioneering the underwater training to simulate the effects of zero gravity in space.</p>
+      
+      <h3>Michael Collins</h3>
+      <figure class="crew-imgHolder" id="Michael">
+        <img src="Michael-Collins.jpg" alt="Michael" />
+        <figcaption>Michael Collins in April 1989(NASA)</figcaption>
+    </figure>
+      <p>Michael Collins was born on October 31, 1930, in Rome, Italy. He attended the United States Military Academy and graduated in 1952. After graduation, Michael Collins transferred to the U.S air force with his job of being a test pilot at Edwards Air Force Base stationed in California. He was later selected by NASA in 1963 to be apart of the space program.</p>
+    
+    </div>
+
+    <div class = "text">
+      <h1 class= "title" id= "ch3">Lift Off - chapter 3</h1>
+      <p>It was finally time, all preparations were set and from almost a decade of testing since the announcement by John F. Kennedy, it had all come to this moment. The crew were scheduled to wake up at 4am and ready to head into the space station with their space suits on. They readied themselves into the ‘Columbia’, the Command Module. The launch was broadcasted through television so people around the world could witness this historic moment. Televised within 33 countries, it was estimated that U.S itself gathered 25 million in viewership. The countdown began with 3 minutes and 20 seconds before launch, it was 13:32:00, July 16th, 1969, the journey to the moon had begun.</p>
+      <p>Launch off was conducted on launch site Cape Canaveral Air Force Station Launch Complex 39A, taking off in Rocket Saturn V SA-506.</p>
+      <audio id="countdown" controls>
+        <source src="countdown.mp3">
+      Your browser does not support the audio element.
+      </audio>
+
+      <p id="lift-off">"LIFT-OFF! We have a lift-off, 32 minutes past the hour. Lift-off on Apollo 11.” Jack King</p>
+    </div>
+
+      <figure class="imgHolder" id="liftoff-img">
+        <img src="apollo_11_lift_off.jpg" alt="Man on Moon" />
+        <figcaption>The launch of Apollo 11 from Cape Kennedy</figcaption>
+    </figure>
+
+    <div class = "text">
+
+    <h1 class= "title" id= "ch4">Landing - chapter 4</h1>
+      <p>Aboard the spacecraft, the crew consisted of Neil Armstrong, Buzz Aldrin and Michael Collins leaving the Earth with the purpose of being the first man on the moon. Neil Armstrong was the mission commander; Buzz Aldrin was the lunar module pilot and Michael Collins was the command module pilot. The journey from Earth to the Moon was 376,400 km long with the mission taking 76 hours to travel directly to the Moon. </p>
+      <p>2 hours and 33 minutes into the Earth’s orbit, the acceleration of the spacecraft had reached its velocity required to escape Earth’s gravity. Reaching upon the moon, the spacecraft was on orbit above the surface of the Moon, with one orbit around the Moon taking 2 hours. Photographs were taken from this orbit and provided a greater understanding on the study of regional lunar geology. </p>
+      <p> The Eagle has successfully landed on the Moon. Neil Armstrong set foot first, claiming him as the first man on the Moon and Buzz Aldrin as the second. Neil Armstrong delivered his famous quote “One small step on the moon for all mankind”. camera was present to record humankind’s steps onto the Moon. Photographs and samples of the Moon’s surface were taken for research and documentation purposes. 2 hours and 15 minutes after landing on the Moon’s surface, the astronauts began preparations to return onto Earth.  </p>
+      <p>Video from CNN</p>
+    </div>
+
+    </div>
+    <video id="landing-vid" controls>
+      <source src="APOLLO 11 FIRST STEPS.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+
+
+
+</body>
+
+</html>
